@@ -170,21 +170,8 @@ Here are the results of the prediction:
 The model was able to correctly guess 8 of the 8 traffic signs, which gives an accuracy of 100%. It's good
 
 
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Describe how certain the model is when predicting on each of the eight new images by looking at the softmax probabilities for each prediction. 
 
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
-
+It may seem strange that the classifier is very certain about the answer, providing all 100% precent certainty to the result. (You can see that in the image above). So no more images provided here.
 
 
