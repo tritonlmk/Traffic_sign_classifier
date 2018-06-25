@@ -9,12 +9,20 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-The size of the training set is 34799
-Ths size of the validation set is 4410
-The size of teh test set is 12630
-The shape of all the traffic signs are transformed int to 32*32
-The numbe of total classes are 43
+*The size of the training set is 34799
+*Ths size of the validation set is 4410
+*The size of teh test set is 12630
+*The shape of all the traffic signs are transformed int to 32*32
+*The numbe of total classes are 43
 
+
+PreProcess of the Data Set:
+grayscale of the Data set and than change the shape into (*,32,32,1)
+normalize the data set into [-1，1]
+Using existing data to produce fake data to argument the original data set, for there are too few data in some classes
+"original data used in this part from jeremy-shannon's traffic sign calssifier.ipyb"
+
+Training Model:LeNet
 
 
 
@@ -23,9 +31,16 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
+| Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x12 	|
+| RELU					| activation    								|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x12 				|
+| Convolution 3x3	    | 1x1 stride,  outputs 10x10x32 				|
+| RELU          	    |                                				|
+| Max Pooling	        | 2x2 stride,  outputs 5x5x32    				|
+| Flatten       	    | input 5x5x32, outputs 800      				|
+| Fully connedted	    | input 800,    outputs 240      				|
+| Fully connected		| input 240,    outputs 110						|
+| RELU          	    | activation                       				|
+| dropout          	    | dropout_rate = 0.5               				|
+| Fully connected		| input 110,    outputs 43						|
 | Softmax				| etc.      
