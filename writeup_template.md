@@ -21,7 +21,7 @@ The goals / steps of this project are the following:
 [image2]: ./examples/grayscale.JPG "Grayscaling"
 [image3]: ./examples/random_noise.JPG "Random Noise"
 [image4]: ./examples/placeholder.PNG "Traffic Sign 1"
-[image4]: ./examples/argumented.PNG "ARGUMENTED_DATA_SET"
+[image5]: ./examples/argumented.PNG "ARGUMENTED_DATA_SET"
 
 ## Rubric Points
 
