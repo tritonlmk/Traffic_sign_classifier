@@ -84,17 +84,22 @@ The augmented data set is the following
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
+| Layer             		|     Description	        	            				| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Input         		    | 32x32x3 RGB image   			    		        		| 
+| Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x12 	  |
+| RELU				        	| activation    					                			|
+| Max pooling	        	| 2x2 stride,  outputs 14x14x12         				|
+| Convolution 3x3	      | 1x1 stride,  outputs 10x10x32 		        		|
+| RELU          	      |                                		        		|
+| Max Pooling	          | 2x2 stride,  outputs 5x5x32    		        		|
+| Flatten       	      | input 5x5x32, outputs 800      	         			|
+| Fully connedted	      | input 800,    outputs 240      		        		|
+| Fully connected		    | input 240,    outputs 110				          		|
+| RELU          	      | activation                             				|
+| dropout          	    | dropout_rate = 0.5               			      	|
+| Fully connected	    	| input 110,    outputs 43					          	|
+| Softmax			        	| etc.      
  
 
 
