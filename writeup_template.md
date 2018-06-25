@@ -2,8 +2,6 @@
 
 ## Writeup
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
 ---
 
 **Build a Traffic Sign Recognition Project**
@@ -67,7 +65,7 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 As a last step, I normalized the image data because I want to make the parameters smaller thus results in faster computing  speed
 
-I decided to generate additional data because some classes contain very little pictures compared with others. So we need to argument those classes to make the convolutional network perform better 
+I decided to generate additional data because some classes contain very little pictures compared with others. So we need to argument those classes to make the convolutionnal network perform better 
 
 To add more data to the the data set, I used the functions from lib cv2, to make those pictures different from the one it is generated from and haveing the right classification at the same time. 
 
@@ -103,30 +101,40 @@ My final model consisted of the following layers:
  
 
 
-#### 3. Describe the model is trained
+#### 3. Describe the how model is trained
 
 To train the model, I used an learning rate of 0.0007 to run 35 epochs
 Then I use an learning rate of 0.0003 to run 95 epochs
 The batch size of the two steps mentioned above are all 128
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93.
+
+I tried the original LeNet but it doesnot work well. then I did some data pre-processing and it still doesn't work well. At last I add the depth of the convolutionnal network and then it works.
 
 My final model results were:
 * training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* validation set accuracy of 0.960 
+* test set accuracy of 0.951
 
-If an iterative approach was chosen:
+For the changes made to LeNet:
 * What was the first architecture that was tried and why was it chosen?
+LeNet original structure.
 * What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+not enough depth, which means the features the convolutionnal network captured is not enough.
+* How was the architecture adjusted and why was it adjusted?
+add the depth of the LeNet
 * Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+Add depth to the LeNet and making the fully connected layer having more inputs
+* What are some of the important design choices and why were they chosen?
+dropout can help with over-fitting, which will result a very high validation accurancy but relatively low test accurancy
 
 If a well known architecture was chosen:
 * What architecture was chosen?
+LeNet
 * Why did you believe it would be relevant to the traffic sign application?
+the original LeNet is used for classifying characters. And for traffic signs
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+the validation accurancy is 0.96, and the test accurancy is 0.95, those two numbers doesn't go too far from each other.
  
 
 ### Test a Model on New Images
@@ -135,8 +143,7 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image4]
 
 The first image might be difficult to classify because ...
 
