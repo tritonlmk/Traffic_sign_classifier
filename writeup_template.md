@@ -174,4 +174,4 @@ The model was able to correctly guess 8 of the 8 traffic signs, which gives an a
 
 It may seem strange that the classifier is very certain about the answer, providing all 100% precent certainty to the result. (You can see that in the image above). So no more images provided here.
 
-
+This may because the images I provided to the classifier is all very clear, and so that the classifier is clever enough to be 100% certain about the answer.
