@@ -10,15 +10,22 @@ The goals / steps of this project are the following:
 * Summarize the results with a written report
 
 *The size of the training set is 34799
+
 *Ths size of the validation set is 4410
+
 *The size of teh test set is 12630
+
 *The shape of all the traffic signs are transformed int to 32*32
+
 *The numbe of total classes are 43
 
 
 PreProcess of the Data Set:
+
 grayscale of the Data set and than change the shape into (*,32,32,1)
+
 normalize the data set into [-1，1]
+
 Using existing data to produce fake data to argument the original data set, for there are too few data in some classes
 "original data used in this part from jeremy-shannon's traffic sign calssifier.ipyb"
 
