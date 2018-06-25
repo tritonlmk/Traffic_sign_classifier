@@ -79,6 +79,8 @@ I decided to generate additional data because some classes contain very little p
 
 To add more data to the the data set, I used the functions from lib cv2, to make those pictures different from the one it is generated from and haveing the right classification at the same time. 
 
+The code used here is got form 'Jeremy Shannon's Traffic_Sign_Classifier', for I know very little to image transformation, I can do very little to this part of the code
+
 Here is an example of an original image and an augmented image:
 
 ![alt text][image3]
