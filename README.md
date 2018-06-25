@@ -44,3 +44,15 @@ My final model consisted of the following layers:
 | dropout          	    | dropout_rate = 0.5               			      	|
 | Fully connected	    	| input 110,    outputs 43					          	|
 | Softmax			        	| etc.      
+
+
+Batch size = 128
+learning rate 0.0007 epochs:35
+learning rate 0.0003 epochs:95
+
+final valication accurancy: 0.960
+final test rate: 0.9509
+
+showing the new images and analye prformance:
+
+accurancy for the new images downloaded from Graman Traffic Signs is 0.875
