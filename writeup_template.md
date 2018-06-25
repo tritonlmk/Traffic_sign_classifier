@@ -22,6 +22,14 @@ The goals / steps of this project are the following:
 [image3]: ./examples/random_noise.JPG "Random Noise"
 [image4]: ./examples/placeholder.PNG "Traffic Sign 1"
 [image5]: ./examples/argumented.PNG "ARGUMENTED_DATA_SET"
+[image6]: ./new_images/00006.ppm "NEW_IMAGE_1"
+[image7]: ./new_images/00009.ppm "NEW_IMAGE_2"
+[image8]: ./new_images/00024.ppm "NEW_IMAGE_3"
+[image9]: ./new_images/00051.ppm "NEW_IMAGE_4"
+[image10]: ./new_images/00060.ppm "NEW_IMAGE_5"
+[image11]: ./new_images/00086.ppm "NEW_IMAGE_6"
+[image12]: ./new_images/00093.ppm "NEW_IMAGE_7"
+[image13]: ./new_images/00107.ppm "NEW_IMAGE_8"
 
 
 ## Rubric Points
@@ -142,9 +150,9 @@ the validation accurancy is 0.96, and the test accurancy is 0.95, those two numb
 
 #### 1. Choose eight German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+Here are eight German traffic signs that I found on the web:
 
-![alt text][image4]
+![alt text][image6] ![alt text][image7] ![alt text][image8] ![alt text][image9] ![alt text][image10] ![alt text][image11] ![alt text][image12] ![alt text][image13] 
 
 The first image might be difficult to classify because ...
 
