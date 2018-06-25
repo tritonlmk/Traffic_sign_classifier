@@ -23,24 +23,17 @@ The goals / steps of this project are the following:
 [image2]: ./examples/grayscale.JPG "Grayscaling"
 [image3]: ./examples/random_noise.JPG "Random Noise"
 [image4]: ./examples/placeholder.PNG "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image4]: ./examples/argumented.PNG "ARGUMENTED_DATA_SET"
 
 ## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
----
+
 ### Writeup / README
 
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/tritonlmk/Traffic_sign_classifier/blob/master/TrafficSignClassifier_refined.ipynb)
 
 ### Data Set Summary & Exploration
-
-#### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
@@ -72,20 +65,22 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 ![alt text][image2]
 
-As a last step, I normalized the image data because ...
+As a last step, I normalized the image data because I want to make the parameters smaller thus results in faster computing  speed
 
-I decided to generate additional data because ... 
+I decided to generate additional data because some classes contain very little pictures compared with others. So we need to argument those classes to make the convolutional network perform better 
 
-To add more data to the the data set, I used the following techniques because ... 
+To add more data to the the data set, I used the functions from lib cv2, to make those pictures different from the one it is generated from and haveing the right classification at the same time. 
 
 Here is an example of an original image and an augmented image:
 
 ![alt text][image3]
 
-The difference between the original data set and the augmented data set is the following ... 
+The augmented data set is the following 
+
+![alt text][image5]
 
 
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2. Describtion of the model used in this program
 
 My final model consisted of the following layers:
 
