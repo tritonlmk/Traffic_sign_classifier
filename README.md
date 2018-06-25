@@ -63,3 +63,9 @@ final test rate: 0.9509
 showing the new images and analye prformance:
 
 accurancy for the new images downloaded from Graman Traffic Signs is 0.875
+
+The problem of the initial LeNet is that the convolution layser output is not deep enough, which means that it does not extract enough features from the original picture. This may because the original LeNet is deigned to focus on letter recognition originally, which has only 10 classes in total.
+
+For the traffic sign classifier, it is also a classifier, only with more features and more output classes, so I simply deepen the output deepth of the convolution layers to make it more accurate, also I add a dropout layer which aims to prevent overfitting.
+
+
