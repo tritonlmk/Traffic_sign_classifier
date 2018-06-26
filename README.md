@@ -1,5 +1,10 @@
-# Traffic_sign_classifier
-Traffic_sign_classifier using LeNet structure
+# **Traffic Sign Recognition** 
+
+## Writeup
+
+---
+
+**Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
@@ -9,29 +14,83 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-*The size of the training set is 34799
 
-*Ths size of the validation set is 4410
+[//]: # (Image References)
 
-*The size of teh test set is 12630
-
-*The shape of all the traffic signs are transformed int to 32*32
-
-*The numbe of total classes are 43
-
-
-PreProcess of the Data Set:
-
-grayscale of the Data set and than change the shape into (*,32,32,1)
-
-normalize the data set into [-1，1]
-
-Using existing data to produce fake data to argument the original data set, for there are too few data in some classes
-"original data used in this part from jeremy-shannon's traffic sign calssifier.ipyb"
-
-Training Model:LeNet
+[image1]: ./examples/visualization.JPG "Visualization"
+[image2]: ./examples/grayscale.JPG "Grayscaling"
+[image3]: ./examples/random_noise.JPG "Random Noise"
+[image4]: ./examples/placeholder.PNG "Traffic Sign 1"
+[image5]: ./examples/argumented.PNG "ARGUMENTED_DATA_SET"
+[image6]: ./new_images/00006.JPG "NEW_IMAGE_1"
+[image7]: ./new_images/00009.JPG "NEW_IMAGE_2"
+[image8]: ./new_images/00024.JPG "NEW_IMAGE_3"
+[image9]: ./new_images/00051.JPG "NEW_IMAGE_4"
+[image10]: ./new_images/00060.JPG "NEW_IMAGE_5"
+[image11]: ./new_images/00086.JPG "NEW_IMAGE_6"
+[image12]: ./new_images/00093.JPG "NEW_IMAGE_7"
+[image13]: ./new_images/00107.JPG "NEW_IMAGE_8"
+[image14]: ./examples/result_softmax.JPG "Result_softmax"
 
 
+## Rubric Points
+
+
+### Writeup / README
+
+
+You're reading it! and here is a link to my [project code](https://github.com/tritonlmk/Traffic_sign_classifier/blob/master/TrafficSignClassifier_refined.ipynb)
+
+### Data Set Summary & Exploration
+
+I used the pandas library to calculate summary statistics of the traffic
+signs data set:
+
+* The size of training set is ? 
+34799
+* The size of the validation set is ?
+4410
+* The size of test set is ?
+12630
+* The shape of a traffic sign image is ?
+32x32
+* The number of unique classes/labels in the data set is ?
+43
+
+#### 2. Include an exploratory visualization of the dataset.
+
+Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+
+![alt text][image1]
+
+### Design and Test a Model Architecture
+
+#### 1. Describe how the image data is preprocessed the image data.
+
+As a first step, I decided to convert the images to grayscale because color is irrelvent with the result of the classifier
+
+Here is an example of a traffic sign image before and after grayscaling.
+
+![alt text][image2]
+
+As a last step, I normalized the image data because I want to make the parameters smaller thus results in faster computing  speed
+
+I decided to generate additional data because some classes contain very little pictures compared with others. So we need to argument those classes to make the convolutionnal network perform better 
+
+To add more data to the the data set, I used the functions from lib cv2, to make those pictures different from the one it is generated from and haveing the right classification at the same time. 
+
+The code used here is got form 'Jeremy Shannon's Traffic_Sign_Classifier', for I know very little to image transformation, I can do very little to this part of the code
+
+Here is an example of an original image and an augmented image:
+
+![alt text][image3]
+
+The augmented data set is the following 
+
+![alt text][image5]
+
+
+#### 2. Describtion of the model used in this program
 
 My final model consisted of the following layers:
 
@@ -51,21 +110,68 @@ My final model consisted of the following layers:
 | dropout          	    | dropout_rate = 0.5               			      	|
 | Fully connected	    	| input 110,    outputs 43					          	|
 | Softmax			        	| etc.      
+ 
 
 
-Batch size = 128
-learning rate 0.0007 epochs:35
-learning rate 0.0003 epochs:95
+#### 3. Describe the how model is trained
 
-final valication accurancy: 0.960
-final test rate: 0.9509
+To train the model, I used an learning rate of 0.0007 to run 35 epochs
+Then I use an learning rate of 0.0003 to run 95 epochs
+The batch size of the two steps mentioned above are all 128
 
-showing the new images and analye prformance:
+#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93.
 
-accurancy for the new images downloaded from Graman Traffic Signs is 0.875
+I tried the original LeNet but it doesnot work well. then I did some data pre-processing and it still doesn't work well. At last I add the depth of the convolutionnal network and then it works.
 
-The problem of the initial LeNet is that the convolution layser output is not deep enough, which means that it does not extract enough features from the original picture. This may because the original LeNet is deigned to focus on letter recognition originally, which has only 10 classes in total.
+My final model results were:
+* training set accuracy of ?
+* validation set accuracy of 0.960 
+* test set accuracy of 0.951
 
-For the traffic sign classifier, it is also a classifier, only with more features and more output classes, so I simply deepen the output deepth of the convolution layers to make it more accurate, also I add a dropout layer which aims to prevent overfitting.
+For the changes made to LeNet:
+* What was the first architecture that was tried and why was it chosen?
+LeNet original structure.
+* What were some problems with the initial architecture?
+not enough depth, which means the features the convolutionnal network captured is not enough.
+* How was the architecture adjusted and why was it adjusted?
+add the depth of the LeNet
+* Which parameters were tuned? How were they adjusted and why?
+Add depth to the LeNet and making the fully connected layer having more inputs
+* What are some of the important design choices and why were they chosen?
+dropout can help with over-fitting, which will result a very high validation accurancy but relatively low test accurancy
+
+If a well known architecture was chosen:
+* What architecture was chosen?
+LeNet
+* Why did you believe it would be relevant to the traffic sign application?
+the original LeNet is used for classifying characters. And for traffic signs
+* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+the validation accurancy is 0.96, and the test accurancy is 0.95, those two numbers doesn't go too far from each other.
+ 
+
+### Test a Model on New Images
+
+#### 1. Choose eight German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+
+Here are eight German traffic signs that I found on the web:
+
+![alt text][image6] ![alt text][image7] ![alt text][image8] ![alt text][image9] ![alt text][image10] ![alt text][image11] ![alt text][image12] ![alt text][image13] 
+
+The first image might be difficult to classify because ...
 
 
+
+#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set.
+
+Here are the results of the prediction:
+
+![alt text][image14]
+
+The model was able to correctly guess 8 of the 8 traffic signs, which gives an accuracy of 100%. It's good
+
+
+#### 3. Describe how certain the model is when predicting on each of the eight new images by looking at the softmax probabilities for each prediction. 
+
+It may seem strange that the classifier is very certain about the answer, providing all 100% precent certainty to the result. (You can see that in the image above). So no more images provided here.
+
+This may because the images I provided to the classifier is all very clear, and so that the classifier is clever enough to be 100% certain about the answer.
