@@ -97,10 +97,10 @@ My final model consisted of the following layers:
 | Layer             		|     Description	        	            				| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		    | 32x32x3 RGB image   			    		        		| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x12 	  |
+| Convolution 5x5     	| 1x1 stride, same padding, outputs 28x28x12 	  |
 | RELU				        	| activation    					                			|
 | Max pooling	        	| 2x2 stride,  outputs 14x14x12         				|
-| Convolution 3x3	      | 1x1 stride,  outputs 10x10x32 		        		|
+| Convolution 5x5	      | 1x1 stride,  outputs 10x10x32 		        		|
 | RELU          	      |                                		        		|
 | Max Pooling	          | 2x2 stride,  outputs 5x5x32    		        		|
 | Flatten       	      | input 5x5x32, outputs 800      	         			|
